@@ -4,6 +4,7 @@ import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:my_first_flutter_project/controller/list_produk_controller.dart';
 import 'package:my_first_flutter_project/pages/list_detail_produk.dart';
+import 'package:my_first_flutter_project/routes.dart';
 
 class ListProdukPage extends StatelessWidget {
   ListProdukPage({super.key});
@@ -30,6 +31,7 @@ class ListProdukPage extends StatelessWidget {
           itemCount: controller.listProduk.length,
           itemBuilder: (context, index) {
             final produk = controller.listProduk[index];
+            //otw naro dismissible
             return Container(
               margin: EdgeInsets.symmetric(vertical: 6),
               decoration: BoxDecoration(
@@ -65,7 +67,11 @@ class ListProdukPage extends StatelessWidget {
                           child: Image.network(
                             produk.gambarProduk,
                             fit: BoxFit.cover,
-                            errorBuilder: (context, error, stackTrace) => Icon(Icons.broken_image, size: 24, color: Colors.grey),
+                            errorBuilder: (context, error, stackTrace) => Icon(
+                              Icons.broken_image,
+                              size: 24,
+                              color: Colors.grey,
+                            ),
                           ),
                         ),
                       ),
@@ -96,8 +102,30 @@ class ListProdukPage extends StatelessWidget {
                           color: Colors.grey[100],
                           shape: BoxShape.circle,
                         ),
-                        child: Icon(Icons.arrow_forward_ios, size: 14, color: Colors.black54),
+                        child: Icon(
+                          Icons.arrow_forward_ios,
+                          size: 14,
+                          color: Colors.black54,
+                        ),
                       ),
+                      onTap: () {
+                            Get.toNamed(
+                              Routes.detailProduk,
+                              arguments: produk,
+                            );
+                          },
+                        // Get.toNamed(
+                        //   Routes.detailProduk,
+                        //   arguments: {
+                        //     'nama': produk.namaProduk,
+                        //     'gambar': produk.gambarProduk,
+                        //     'namaToko': produk.namaToko,
+                        //     'harga': produk.harga,
+                        //     'deskripsi': produk.deskripsi,
+                        //     'rating': produk.rating,
+                        //     'review': produk.review,
+                        //   },
+                        // );
                     ),
                   ),
                 ),

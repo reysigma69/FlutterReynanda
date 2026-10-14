@@ -8,7 +8,8 @@ class ListProdukController extends GetxController {
       harga: "Rp 15.999.000",
       gambarProduk: "https://www.giztop.com/media/catalog/product/cache/97cc1143d2e20f2b0c8ea91aaa12053c/p/m/pms_1790062633.5757078_3.png",
       deskripsi: "Smartphone flagship Xiaomi dengan kolaborasi kamera Leica kelas atas, performa Snapdragon terbaru, dan fast charging super ngebut.",
-      review: "Kamera Leica-nya juara banget buat foto low light, performa stabil!",
+      review:
+          "Kamera Leica-nya juara banget buat foto low light, performa stabil!",
       rating: 5,
       namaToko: "Xiaomi Official Store",
     ),
@@ -42,7 +43,7 @@ class ListProdukController extends GetxController {
     ProdukModel(
       namaProduk: "LG OLED Evo AI G5 97 Inch",
       harga: "Rp 334.000.000",
-      gambarProduk: "https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=800&q=80",
+      gambarProduk: "https://imgs.search.brave.com/S0NxnfyuMQKwPaxI1t7Jd9C_rpcP8ODAdqj2fTbtw40/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/OTE1MjFrRm9JSkwu/anBn",
       deskripsi: "Smart TV flagship LG 97 inch beresolusi 4K dengan teknologi OLED Evo, ditenagai AI Processor mutakhir untuk kualitas gambar super sinematik.",
       review: "Visualnya bagaikan bioskop pribadi, hitamnya pekat dan warnanya sangat hidup di layar raksasa!",
       rating: 5,
@@ -62,7 +63,8 @@ class ListProdukController extends GetxController {
       harga: "Rp 21.590.000",
       gambarProduk: "https://down-id.img.susercontent.com/file/id-11134207-81ztp-metkhfz46w3n98",
       deskripsi: "Laptop gaming tangguh standar militer dengan AMD Ryzen 7 dan grafis RTX 4050.",
-      review: "Kokoh, adem, dan sangat diandalkan untuk tugas kuliah dan ngoding.",
+      review:
+          "Kokoh, adem, dan sangat diandalkan untuk tugas kuliah dan ngoding.",
       rating: 5,
       namaToko: "NVIDIA GeForce Laptop Official Shop",
     ),
@@ -78,7 +80,7 @@ class ListProdukController extends GetxController {
     ProdukModel(
       namaProduk: "MacBook Pro 16 M5 Max",
       harga: "Rp 87.999.000",
-      gambarProduk: "https://www.hellostore.id/cdn/shop/files/2_f91d0e23-be5c-4a42-b156-e4d6a24fff09.png?v=1776916471&width=1445",
+      gambarProduk: "https://www.digimap.co.id/cdn/shop/files/0788-APPMGED4ID-A-1.jpg?v=1778420625&width=1920",
       deskripsi: "Laptop kreator kelas profesional tertinggi ditenagai chip M5 Max, RAM masif, dan layar Liquid Retina XDR yang memukau untuk rendering serta kompilasi berat.",
       review: "Performa koding, rendering video 8K, dan multitasking berjalan sangat instan tanpa ada kendala sama sekali.",
       rating: 5,

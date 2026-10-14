@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:my_first_flutter_project/controller/list_produk_controller.dart';
 import 'package:my_first_flutter_project/models/produk_model.dart';
+import 'package:my_first_flutter_project/controller/detail_produk_controller.dart';
+import 'package:my_first_flutter_project/controller/list_produk_controller.dart';
 
 class ListDetailProduk extends StatelessWidget {
   ListDetailProduk({super.key});
 
+  //final controller = Get.put(ListProdukController()); ini harusnya bener dawg
   final ProdukModel produk = Get.arguments;
 
   @override
@@ -64,34 +68,58 @@ class ListDetailProduk extends StatelessWidget {
                       children: [
                         Text(
                           produk.namaToko,
-                          style: TextStyle(fontSize: 14, color: const Color.fromARGB(255, 0, 139, 209), fontWeight: FontWeight.w600),
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: const Color.fromARGB(255, 0, 139, 209),
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                         SizedBox(height: 8),
                         Text(
                           produk.namaProduk,
-                          style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.black87),
+                          style: TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black87,
+                          ),
                         ),
                         SizedBox(height: 8),
                         Text(
                           produk.harga,
-                          style: TextStyle(fontSize: 20, color: Colors.green[700], fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.green[700],
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                         SizedBox(height: 16),
                         Divider(),
                         SizedBox(height: 8),
                         Text(
                           "Deskripsi Produk",
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black87),
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black87,
+                          ),
                         ),
                         SizedBox(height: 4),
                         Text(
                           produk.deskripsi,
-                          style: TextStyle(fontSize: 14, color: Colors.grey[800], height: 1.4),
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey[800],
+                            height: 1.4,
+                          ),
                         ),
                         SizedBox(height: 16),
                         Text(
                           "Ulasan Pembeli (Rating: ${produk.rating}/5)",
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black87),
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black87,
+                          ),
                         ),
                         SizedBox(height: 8),
                         Container(
@@ -103,7 +131,11 @@ class ListDetailProduk extends StatelessWidget {
                           ),
                           child: Text(
                             '"${produk.review}"',
-                            style: TextStyle(fontSize: 14, fontStyle: FontStyle.italic, color: Colors.grey[800]),
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontStyle: FontStyle.italic,
+                              color: Colors.grey[800],
+                            ),
                           ),
                         ),
                       ],
