@@ -60,6 +60,7 @@ flutter:
 
   assets:
     - assets/images/Instagram_logo.svg.webp
+    - assets/images/rey.jpg
 
   # To add assets to your application, add an assets section, like this:
   # assets:
