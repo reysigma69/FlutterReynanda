@@ -15,7 +15,7 @@ class Routes {
   static const String listProduk = "/listProduk";
   static const String detailProduk = "/detailProduk";
   static const String mainmenupage = "/mainmenupage";
-  static const String menuDrawer= "/menuDrawer";
+  static const String menuDrawer = "/menuDrawer";
   //login,kalkulator dll
 
   //kita tampung kedalem array yg bakal dipasang ke main dart
