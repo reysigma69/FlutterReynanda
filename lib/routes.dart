@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:my_first_flutter_project/pages/confirm_registration_page.dart';
 import 'package:my_first_flutter_project/pages/kalkulator_page_new.dart';
 import 'package:my_first_flutter_project/pages/list_produk_page.dart';
+import 'package:my_first_flutter_project/pages/login_clone.dart';
 import 'package:my_first_flutter_project/pages/main_menu_page.dart';
 import 'package:my_first_flutter_project/pages/registration_page.dart';
 import 'package:my_first_flutter_project/pages/list_detail_produk.dart';
@@ -16,7 +17,7 @@ class Routes {
   static const String detailProduk = "/detailProduk";
   static const String mainmenupage = "/mainmenupage";
   static const String menuDrawer = "/menuDrawer";
-  //login,kalkulator dll
+  static const String loginClone = "/loginClone";
 
   //kita tampung kedalem array yg bakal dipasang ke main dart
 static final myPages = [
@@ -27,6 +28,7 @@ static final myPages = [
   GetPage(name: kalkulator, page: () => KalkulatorPageNew()),
   GetPage(name: mainmenupage, page: () => MainMenuPage()),
   GetPage(name: menuDrawer, page: () => MenuDrawer()),
+  GetPage(name: loginClone, page: () => LoginClone()),
 
 ];
 }

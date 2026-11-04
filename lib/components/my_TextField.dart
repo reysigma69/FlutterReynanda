@@ -7,6 +7,8 @@ class MyTextfield extends StatelessWidget {
   final double radius;
   final TextInputType? keyboardType;
   final List<TextInputFormatter>? inputFormatters;
+  final bool obscureText; 
+  final Widget? suffixIcon; 
 
   const MyTextfield({
     super.key, 
@@ -14,7 +16,9 @@ class MyTextfield extends StatelessWidget {
     required this.txtController, 
     required this.radius,
     this.keyboardType,
-    this.inputFormatters
+    this.inputFormatters,
+    this.obscureText = false,
+    this.suffixIcon,
   });
 
   @override
@@ -23,7 +27,13 @@ class MyTextfield extends StatelessWidget {
       controller: txtController,
       keyboardType: keyboardType,
       inputFormatters: inputFormatters,
-      decoration: InputDecoration(hint: Text(myHint),border: OutlineInputBorder(borderRadius: BorderRadius.circular(radius)),
+      obscureText: obscureText,
+      decoration: InputDecoration(
+        hintText: myHint,
+        suffixIcon: suffixIcon,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(radius),
+        ),
       ),
     );
   }

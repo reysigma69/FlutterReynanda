@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:my_first_flutter_project/controller/login_clone_controller.dart';
+import 'package:my_first_flutter_project/routes.dart';
 import '../components/my_ButtonClone.dart';
-import '../components/my_TextfieldClone.dart';
 
-class LoginCloneFix extends StatefulWidget {
-  const LoginCloneFix({super.key});
+class LoginClone extends StatelessWidget {
+  LoginClone({super.key});
 
-  @override
-  State<LoginCloneFix> createState() => _LoginCloneState();
-}
-class _LoginCloneState extends State<LoginCloneFix> {
-  final TextEditingController controllerEmail = TextEditingController();
-  final TextEditingController controllerPassword = TextEditingController();
-  bool _obscureText = true;
+  final controller = Get.put(LoginCloneController());
 
   @override
   Widget build(BuildContext context) {
@@ -28,31 +24,20 @@ class _LoginCloneState extends State<LoginCloneFix> {
                 height: 60,
               ),
               const SizedBox(height: 40),
-
-              MyTextfieldclone(
-                controller: controllerEmail,
-                hintText: "Phone number, username or email",
+              TextField(
+                controller: controller.txtUsername,
+                decoration: const InputDecoration(
+                  hintText: "Phone number, username or email",
+                ),
               ),
               const SizedBox(height: 12),
-
-              MyTextfieldclone(
-                controller: controllerPassword,
-                hintText: "Password",
-                obscureText: _obscureText,
-                suffixIcon: IconButton(
-                  icon: Icon(
-                    _obscureText ? Icons.visibility_off : Icons.visibility,
-                    color: Colors.grey,
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      _obscureText = !_obscureText;
-                    });
-                  },
+              TextField(
+                controller: controller.txtPassword,
+                decoration: const InputDecoration(
+                  hintText: "Password",
                 ),
               ),
               const SizedBox(height: 15),
-
               Align(
                 alignment: Alignment.centerRight,
                 child: TextButton(
@@ -68,13 +53,16 @@ class _LoginCloneState extends State<LoginCloneFix> {
                 ),
               ),
               const SizedBox(height: 15),
-
-              MyButtonclone(
-                text: "Log In",
-                onPressed: () {},
+              Obx(() => controller.isLoading.value
+                ? const CircularProgressIndicator()
+                : MyButtonclone(
+                    text: "Log In",
+                    onPressed: () {
+                      controller.login();
+                    },
+                  ),
               ),
               const SizedBox(height: 20),
-
               Row(
                 children: const [
                   Expanded(child: Divider(thickness: 1, color: Colors.grey)),
@@ -93,7 +81,6 @@ class _LoginCloneState extends State<LoginCloneFix> {
                 ],
               ),
               const SizedBox(height: 20),
-
               TextButton.icon(
                 onPressed: () {},
                 icon: const Icon(
@@ -110,7 +97,6 @@ class _LoginCloneState extends State<LoginCloneFix> {
                   ),
                 ),
               ),
-
               const SizedBox(height: 40),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_first_flutter_project/controller/list_produk_controller.dart';
 import 'package:my_first_flutter_project/models/produk_model.dart';
-import 'package:my_first_flutter_project/pages/list_detail_produk.dart';
 import 'package:my_first_flutter_project/routes.dart';
 
 class ListProdukPage extends StatelessWidget {
@@ -52,16 +51,6 @@ class ListProdukPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 161, 199, 168),
-      appBar: AppBar(
-        title: const Text(
-          "ReynandaStuffStore",
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35),
-        ),
-        centerTitle: true,
-        elevation: 0,
-        backgroundColor: const Color.fromARGB(255, 10, 169, 4),
-        foregroundColor: const Color.fromARGB(255, 255, 255, 255),
-      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
         child: Obx(() => RefreshIndicator(

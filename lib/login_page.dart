@@ -20,16 +20,20 @@ class _LoginPageState extends State<LoginPage> {
         children: [
           Container(
             margin: EdgeInsets.all(10),
-            child: MyTextfield(
-              txtController: txtUsername,
-              myHint: "Input Username", radius: 10,
+            child: Container(
+              child: MyTextfield(
+                txtController: txtUsername,
+                myHint: "Input Username", radius: 10,
+              ),
             ),
           ),
           Container(
             margin: EdgeInsets.all(10),
-            child: MyTextfield(
-              txtController: txtPassword,
-              myHint: "Input Password", radius: 10,
+            child: Container(
+              child: MyTextfield(
+                txtController: txtPassword,
+                myHint: "Input Password", radius: 10,
+              ),
             ),
           ),
           Row(
