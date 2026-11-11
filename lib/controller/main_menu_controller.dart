@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:my_first_flutter_project/menu/history_page.dart';
 import 'package:my_first_flutter_project/menu/home_page.dart';
 import 'package:my_first_flutter_project/menu/profile_page.dart';
+import 'package:my_first_flutter_project/menu/electronics_page.dart';
 
 class MainMenuController extends GetxController{
   final RxInt selectedIndex = 0.obs;
@@ -12,6 +13,10 @@ class MainMenuController extends GetxController{
     selectedIndex.value = index;
   }
 
-    List<Widget> listPages = [HomePage(), HistoryPage(), ProfilePage()];
+    List<Widget> listPages = [HomePage(), HistoryPage(), ProfilePage(), ElectronicsPage()];
 
+    void goToPage(int index) {
+        selectedIndex.value = index;
+        Get.back();
+      }
 }

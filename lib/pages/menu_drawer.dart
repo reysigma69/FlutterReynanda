@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_first_flutter_project/controller/menu_drawer_controller.dart';
+import 'package:my_first_flutter_project/menu/electronics_page.dart';
 
 class MenuDrawer extends StatelessWidget {
   MenuDrawer({super.key});
@@ -59,6 +60,11 @@ class MenuDrawer extends StatelessWidget {
                   leading: const Icon(Icons.person),
                   title: const Text('Profile'),
                   onTap: () => controller.goToPage(2),
+                ),
+                ListTile(
+                  leading: const Icon(Icons.devices),
+                  title: const Text('Other Electronics'),
+                  onTap: () => controller.goToPage(3)
                 ),
               ],
             ),

@@ -3,12 +3,14 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:my_first_flutter_project/routes.dart';
+import 'package:my_first_flutter_project/models/login_model.dart';
 
 class LoginCloneController extends GetxController {
   TextEditingController txtUsername = TextEditingController();
   TextEditingController txtPassword = TextEditingController();
 
   var isLoading = false.obs;
+  var loginModel = Rxn<LoginModel>();
 
   Future<void> login() async {
     if (txtUsername.text.isEmpty || txtPassword.text.isEmpty) {
@@ -31,18 +33,20 @@ class LoginCloneController extends GetxController {
         isLoading.value = false;
 
         if (response.statusCode == 200) {
-          final data = jsonDecode(response.body);
+          loginModel.value = loginModelFromJson(response.body);
+          // final data = jsonDecode(response.body);
           
-          if (data['status'] == true) {
+          if (loginModel.value?.status == true) {
             Get.offAllNamed(Routes.mainmenupage);
             Get.snackbar(
               "Berhasil", 
-              data['message'],
+              // data['message'],
+              loginModel.value!.message.toString(),
               backgroundColor: Colors.green,
               colorText: Colors.white,
             );
           } else {
-            Get.snackbar("Login Gagal", data['message']);
+            Get.snackbar("Login Gagal", loginModel.value!.message.toString());
           }
         } else {
           Get.snackbar("Gagal", "Terjadi masalah pada server. Status: ${response.statusCode}");

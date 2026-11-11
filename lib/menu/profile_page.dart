@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_first_flutter_project/controller/menu_drawer_controller.dart';
-import 'package:my_first_flutter_project/pages/menu_drawer.dart';
 
 class ProfilePage extends StatelessWidget {
   ProfilePage({super.key});
@@ -12,15 +11,6 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 245, 245, 245),
-      drawer: MenuDrawer(), 
-      
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: const Color.fromARGB(255, 10, 169, 4),
-        foregroundColor: Colors.white,
-        title: const Text('My Profile', style: TextStyle(fontWeight: FontWeight.bold)),
-        centerTitle: true,
-      ),
       body: Column(
         children: [
           Stack(
